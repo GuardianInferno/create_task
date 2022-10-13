@@ -147,7 +147,7 @@ def play_again():
     time.sleep(.5)
     c = input("Want to play again? ")
     if c.lower().strip()[0] == 'y':
-        play('y)
+        play('y')
     elif c.lower().strip()[0] == 'n':
         play('n')
     else:
