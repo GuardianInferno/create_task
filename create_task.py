@@ -147,9 +147,11 @@ def play_again():
     time.sleep(.5)
     c = input("Want to play again? ")
     if c.lower().strip()[0] == 'y':
-        play(c.lower().strip()[0])
-    else:
+        play('y)
+    elif c.lower().strip()[0] == 'n':
         print('Thanks for Playing!')
+    else:
+        print('Ok')
 
 
 def play(option: str):
