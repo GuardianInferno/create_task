@@ -149,7 +149,7 @@ def play_again():
     if c.lower().strip()[0] == 'y':
         play('y)
     elif c.lower().strip()[0] == 'n':
-        print('Thanks for Playing!')
+        play('n')
     else:
         print('Ok')
 
