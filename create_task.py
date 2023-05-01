@@ -1,19 +1,15 @@
 import os
 import time
 
+
+# function which clears the console
 def clearConsole():
     command = 'clear'
     if os.name in ('nt', 'dos'):
         command = 'cls'
     os.system(command)
 
-
-# define a print board
-# define a player move
-# define what is victory
-# define what a draw is
-# Create a Loop for iteration
-
+# list to store the board data
 board = {1: " ", 2: " ", 3: " ",
          4: " ", 5: " ", 6: " ",
          7: " ", 8: " ", 9: " "}
@@ -33,6 +29,7 @@ def board1():
 
 
 def check_victory():
+    # checks all possible combinations of a victory in tic tac toe
     while playermove >= 5:
         if board.get(1).strip() == board.get(2) == board.get(3):  # 1-2-3 horiz
             print("Player " + board.get(1) + " wins!")
@@ -81,6 +78,7 @@ def check_victory():
 
 
 def check_move():
+    # prompts the player to make a move and checks if it is a valid move
     move = int(input("Player " + player + " choose a spot: "))
     while board[move] != " ":
         clearConsole()
@@ -156,6 +154,11 @@ def play_again():
 
 def play(option: str):
     if option == 'y':
+        choice = input('Are you sure you want to play?')
+        clearConsole()
+        while choice.lower().strip()[0] != 'y':
+            choice = input('Are you sure you want to play? (Say yes or you will never leave!)')
+            clearConsole()
         game()
     elif option == 'n':
         print('Awwww. Maybe next time!')
